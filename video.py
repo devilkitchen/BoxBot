@@ -19,7 +19,7 @@ aria2 = aria2p.API(
 async def download_video(url, reply_msg, user_mention, user_id):
     try:
         # Fetch download details
-        response = requests.get(f"https://teraboxvideodownloader.nepcoderdevs.workers.dev/?url={url}")
+        response = requests.get(f"https://pika-terabox-dl.vercel.app/?url={url}")
         response.raise_for_status()
         data = response.json()
 
@@ -138,7 +138,7 @@ async def upload_video(client, file_path, thumbnail_path, video_title, reply_msg
             )
             await asyncio.sleep(1)
             await message.delete()
-            await message.reply_sticker("CAACAgIAAxkBAAEZdwRmJhCNfFRnXwR_lVKU1L9F3qzbtAAC4gUAAj-VzApzZV-v3phk4DQE")
+            await message.reply_sticker("CAACAgIAAxkBAAENaZhncodxwT91b8ito6KMMzRVXooQzwACoRoAAjNr8UlRn7snL37A0jYE")
 
         await reply_msg.delete()
 

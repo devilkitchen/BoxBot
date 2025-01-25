@@ -16,10 +16,11 @@ aria2 = aria2p.API(
     )
 )
 
+
 async def download_video(url, reply_msg, user_mention, user_id):
     try:
         # Fetch download details
-        response = requests.get(f"https://ashlynn.serv00.net/terapre.php/?url={url}")
+        response = requests.get(f"https://rapidapi.com/pb068528/api/terabox-downloader-direct-download-link-generator2/pricing/?url={url}")
         response.raise_for_status()
         data = response.json()
 
@@ -27,6 +28,9 @@ async def download_video(url, reply_msg, user_mention, user_id):
         if "response" not in data or not data["response"]:
             raise Exception("Invalid response from the server")
 
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        
         resolutions = data["response"][0].get("resolutions")
         if not resolutions or "Fast Download" not in resolutions:
             raise Exception("Fast Download link not available")

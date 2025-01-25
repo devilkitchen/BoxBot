@@ -24,7 +24,7 @@ aria2.set_global_options(options)
 
 
 async def download_video(url, reply_msg, user_mention, user_id):
-    response = requests.get(f"https://ashlynn.serv00.net/terapre.php/?url={url}")
+    response = requests.get(f"https://rapidapi.com/pb068528/api/terabox-downloader-direct-download-link-generator2/pricing/?url={url}")
     response.raise_for_status()
     data = response.json()
 
@@ -87,7 +87,7 @@ async def download_video(url, reply_msg, user_mention, user_id):
         return None, None, None
 
 # async def download_video(url, reply_msg, user_mention, user_id):
-#     response = requests.get(f"https://teraboxvideodownloader.nepcoderdevs.workers.dev/?url={url}")
+#     response = requests.get(f"https://rapidapi.com/pb068528/api/terabox-downloader-direct-download-link-generator2/pricing/?url={url}")
 #     response.raise_for_status()
 #     data = response.json()
 

@@ -305,14 +305,14 @@ async def handle_message(client, message: Message):
         await message.reply_text("To use this bot, please verify your identity. Click /start to begin.")
         return
 
-    is_member = await is_user_member(client, user_id)
+    # is_member = await is_user_member(client, user_id)
 
-    if not is_member:
-        join_button = InlineKeyboardButton("Join", url="https://t.me/+LR1EON0xyrllZjQ1")
-        reply_markup = InlineKeyboardMarkup([[join_button]])
-        await message.reply_text("You must join my channel to use me.", reply_markup=reply_markup)
-        return
-
+# if not is_member:
+#     join_button = InlineKeyboardButton("Join", url="https://t.me/+LR1EON0xyrllZjQ1")
+#     reply_markup = InlineKeyboardMarkup([[join_button]])
+#     await message.reply_text("You must join my channel to use me.", reply_markup=reply_markup)
+#     return
+    
     terabox_link = message.text.strip()
 
     if not is_terabox_link(terabox_link):
